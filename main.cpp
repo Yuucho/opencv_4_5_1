@@ -1,8 +1,4 @@
-#include <opencv2/opencv.hpp>
-#include <iostream>
-
-using namespace std;
-using namespace cv;
+#include "QuickOpencv.h"
 
 int main()
 {
@@ -10,13 +6,15 @@ int main()
     cout << "OpenCV_Version: " << CV_VERSION << endl;
 
     //¶ÁÈ¡Í¼Æ¬
-    Mat img = imread("C:\\Users\\Administrator\\Desktop\\1.jpg",IMREAD_GRAYSCALE);
+    Mat img = imread("C:\\Users\\Administrator\\Desktop\\·âÃæ\\3.jpg");
     if (img.empty())
     {
         printf("could not load image...\n");
     }
-    namedWindow("input_window", WINDOW_FREERATIO);
+    //namedWindow("input_window");
     imshow("input_window", img);
+    QuickDemo qd;
+    qd.colorSpace_Demo(img);
     waitKey(0);
     destroyAllWindows();
     return 0;
