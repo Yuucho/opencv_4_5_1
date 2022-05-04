@@ -1,21 +1,23 @@
-#include "QuickOpencv.h"
+#include <opencv2/opencv.hpp>
+#include "quickopencv.h"
+#include <iostream>
 
-int main()
-{
-    //OpenCV版本号
-    cout << "OpenCV_Version: " << CV_VERSION << endl;
+using namespace cv;
+using namespace std;
 
-    //读取图片
-    Mat img = imread("C:\\Users\\Administrator\\Desktop\\封面\\3.jpg");
-    if (img.empty())
-    {
-        printf("could not load image...\n");
-    }
-    //namedWindow("input_window");
-    imshow("input_window", img);
-    QuickDemo qd;
-    qd.colorSpace_Demo(img);
-    waitKey(0);
-    destroyAllWindows();
-    return 0;
+int main(int argc, char** argv) {
+	//Mat src = imread("C:\\Users\\Administrator\\Desktop\\封面\\3.jpg"); //  B, G, R
+	//if (src.empty()) {
+	//	printf("could not load image....\n");
+	//	return -1;
+	//}
+	//// namedWindow("输入窗口", WINDOW_FREERATIO);
+	//imshow("输入窗口", src);
+
+	QuickDemo qd;
+	qd.face_detection_demo();
+
+	waitKey(0);
+	destroyAllWindows();
+	return 0;
 }
